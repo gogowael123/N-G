@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المشروبات - قائمة الطعام</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background: url("N&G.jpg.webp") no-repeat center center fixed;
+            background-size: cover;
+        }
+        .navbar {
+            background-color: #000;
+            padding: 10px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            margin: 15px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        .menu-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .menu-item .info {
+            flex: 1;
+            text-align: right;
+            padding-right: 20px;
+        }
+        .menu-item .price {
+            font-weight: bold;
+            color: #d9534f;
+        }
+        .quantity-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .quantity-btn {
+            background-color: #000;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+        .quantity {
+            font-size: 18px;
+            font-weight: bold;
+            min-width: 30px;
+            text-align: center;
+        }
+        .add-to-cart {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 50px;
+            font-size: 18px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        .whatsapp-btn img {
+            width: 24px;
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="navbar">
+        <a href="sate.html">🏠 الصفحة الرئيسية</a>
+        <a href="targetgالمشويات.html">🍖 المشويات</a>
+        <a href="targetnالحلويات.html">🍰 الحلويات</a>
+        <a href="targetsالمشروبات.html">🥤 المشروبات</a>
+        <a href="targetالمعجنات.html">🍕 المعجنات</a>
+    </div>
+
+    <div class="container">
+        <h2>🍹 قائمة المشروبات</h2>
+
+        <div class="menu-item">
+            <img src="لاتيه.gpj.jpeg"لاتيه>
+            <div class="info">
+                <h3>لاتيه</h3>
+                <p>مشروب قهوة بالحليب الكريمي</p>
+            </div>
+            <div class="price">50 جنيه</div>
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">➖</button>
+                <span class="quantity">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">➕</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart('لاتيه', 50, 'لاتيه.jpg', this)">🛒 أضف إلى السلة</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="ريدبول.gpj.jpeg" alt="ريدبول">
+            <div class="info">
+                <h3>ريد بول</h3>
+                <p>مشروب طاقة منعش</p>
+            </div>
+            <div class="price">40 جنيه</div>
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">➖</button>
+                <span class="quantity">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">➕</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart('ريد بول', 40, 'ريدبول.jpg', this)">🛒 أضف إلى السلة</button>
+        </div>
+
+        <div class="menu-item">
+            <img src="" alt="اسبريسو">
+            <div class="info">
+                <h3>اسبريسو</h3>
+                <p>قهوة إيطالية مركزة</p>
+            </div>
+            <div class="price">35 جنيه</div>
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">➖</button>
+                <span class="quantity">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">➕</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart('اسبريسو', 35, 'اسبريسو.jpg', this)">🛒 أضف إلى السلة</button>
+        </div>
+
+        <div style="margin-top: 20px;">
+            <a href="sate.html" class="add-to-cart">⬅ العودة للصفحة الرئيسية</a>
+        </div>
+
+    </div>
+
+    <a class="whatsapp-btn" href="https://wa.me/1234567890" target="_blank">
+        <img src="whatsapp-icon.png" alt="واتساب"> تواصل معنا
+    </a>
+
+    <script>
+        function increaseQuantity(button) {
+            let quantityElement = button.previousElementSibling;
+            let quantity = parseInt(quantityElement.innerText);
+            quantityElement.innerText = quantity + 1;
+        }
+
+        function decreaseQuantity(button) {
+            let quantityElement = button.nextElementSibling;
+            let quantity = parseInt(quantityElement.innerText);
+            if (quantity > 1) {
+                quantityElement.innerText = quantity - 1;
+            }
+        }
+
+        function addToCart(name, price, image, button) {
+            let quantity = parseInt(button.previousElementSibling.querySelector(".quantity").innerText);
+            let cart = JSON.parse(localStorage.getItem("cart")) || [];
+            cart.push({ name, price, image, quantity });
+            localStorage.setItem("cart", JSON.stringify(cart));
+            alert(quantity + " × " + name + " تمت إضافتها إلى عربة التسوق!");
+        }
+    </script>
+
+</body>
+</html>

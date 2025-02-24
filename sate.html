@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> تجربة طعام لا تُنسى</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            background: url("N&G.jpg.webp") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            border: 10px solid #020202;
+        }
+        .navbar {
+            background-color: #000000;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar .left {
+            display: flex;
+            align-items: center;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .menu-section {
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        .product-card {
+            background: #fff;
+            width: 250px;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            flex: 0 0 auto;
+            color: black;
+        }
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .price {
+            color: #d63f3a;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .add-to-cart {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #000000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+
+    
+        
+        .navbar {
+            background-color: #000000;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .navbar .left {
+            display: flex;
+            align-items: center;
+        }
+        .navbar a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .header {
+            margin-top: 10px;
+        }
+        .header img {
+            width: 150px;  
+            height: auto;
+        }
+        .menu-header {
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .menu-section {
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 1px solid #ffffff;
+        }
+        .menu-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+        .menu-item .info {
+            flex: 1;
+            text-align: right;
+            padding-right: 20px;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .products-container {
+            display: flex;
+            flex-wrap: nowrap; /* يجعل المنتجات في صف واحد */
+            justify-content: flex-start;
+            overflow-x: auto; /* يضيف تمرير أفقي عند الحاجة */
+            padding: 20px;
+            gap: 20px;
+            white-space: nowrap;
+            
+        }
+        .product-card {
+            background: url("") no-repeat center center fixed;
+            width: 250px;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            flex: 0 0 auto;
+        }
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .product-card h3 {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #000000;
+        }
+        .price {
+            color: #000000;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .add-to-cart {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 15px;
+            background: #000000;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .add-to-cart:hover {
+            background: #000000;
+        }
+    </style>
+</head>
+    </style>
+</head>
+<body>
+    
+
+    <script>
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name, price, image });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(name + " تمت إضافته إلى عربة التسوق!");
+        }
+        </script>
+    <script>
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name, price, image });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(name + " تمت إضافته إلى عربة التسوق!");
+        }
+    </script>
+    <div class="navbar">
+        <div class="left">
+            <a href="عربة التسوق.html">🛒 عربة التسوق</a>
+            <a href="#">English</a>
+        </div>
+    </div>
+    <body>
+    <h2>📢 العروض الخاصة</h2>
+    
+    <div class="products-container">
+        <div class="product-card">
+            <img src="بيتزا خضار .jpg" alt="منتج 1">
+            <h3>بيتزا خضار حجم عائلي</h3>
+            <p class="price">150 جنيه</p>
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">➖</button>
+                <span class="quantity">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">➕</button>
+            </div>
+
+            <button class="add-to-cart" onclick="addToCart('بيتزا مشوية', 150, 'car1.jpg')">🛒 أضف إلى السلة</button>
+        </div>
+
+        <div class="product-card">
+            <img src="دونتس الشوكلاته .jpg" alt="منتج 2">
+            <h3>دونتس شوكلاته لذيذ</h3>
+            <p class="price">50 جنيه</p>
+            <div class="quantity-container">
+                <button class="quantity-btn" onclick="decreaseQuantity(this)">➖</button>
+                <span class="quantity">1</span>
+                <button class="quantity-btn" onclick="increaseQuantity(this)">➕</button>
+            </div>
+            <button class="add-to-cart" onclick="addToCart('كنافة نابلسية', 50, 'car2.jpg')">🛒 أضف إلى السلة</button>
+        </div>
+    </div>
+
+    <script>
+         function increaseQuantity(button) {
+        let quantityElement = button.previousElementSibling;
+        let quantity = parseInt(quantityElement.innerText);
+        quantityElement.innerText = quantity + 1;
+    }
+
+    function decreaseQuantity(button) {
+        let quantityElement = button.nextElementSibling;
+        let quantity = parseInt(quantityElement.innerText);
+        if (quantity > 1) {
+            quantityElement.innerText = quantity - 1;
+        }
+    }
+        function addToCart(name, price, image) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push({ name, price, image });
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(name + " تمت إضافته إلى عربة التسوق!");
+        }
+    </script>
+    <div class="header">
+        <img src="N&G.jpg.webp" alt="لوجو المطعم">
+    </div>
+
+    <hr>
+    <mark>
+        <div class="menu-header">🍽️ قائمة الطعام</div>
+    </mark>
+
+    <div class="menu-section">
+       <a href="targetالمعجنات.html"_blank> <h2>🍕المعجنات</h2></a>
+        <div class="menu-item">
+            <img src="N.jpg" alt="بيتزا">
+        </div>
+    </div>
+
+    <div class="menu-section">
+     <a href="targetgالمشويات.html"_blank>   <h2>🍖 المشويات</h2> </a>
+        <div class="menu-item">
+            <img src="g.jpg" alt="كباب">
+        </div>
+    </div>
+
+    <div class="menu-section">
+       <a href="targetnالحلويات.html"_blank> <h2>🍰 الحلويات</h2> </a>
+        <div class="menu-item">
+            <img src="th.jpg" alt="كنافة">
+        </div>
+    </div>
+
+    <div class="menu-section">
+        <a href="targetsالمشروبات.html"_blank> <h2>🥤 المشروبات</h2> </a>
+        <div class="menu-item">
+            <img src="thg.jpg" alt="عصير برتقال">
+        </div>
+    </div>
+    <div class="products-container">
+        <div class="product-card">
+            <p>
+               <h2> مرحبًا بكم في[N&G]</h2> حيث نقدم لك تجربة طعام فريدة تجمع بين المذاق الأصيل والجودة العالية. منذ افتتاحنا،
+                 <br >كان هدفنا تقديم أشهى الأطباق المحضّرة بأفضل المكونات الطازجة لضمان رضا عملائنا.</h2>
+            <a href="نبذه عن المطعم.html" نبذه  _blank> <h2>نبذه عن المطعم</h2> </a>
+        </div>
+        <br>
+        <div class="product-card">
+            <a href="https://chat.whatsapp.com/DmKS4ID7s3KIGWGnQx6ovr"_blank> <h2>رابط الواتساب</h2> </a>
+        </div>
+    </div>
+</body>
+</html>
